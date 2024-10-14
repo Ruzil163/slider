@@ -1,0 +1,161 @@
+@font-face{
+    src: url(./fonts/NunitoSans-Regular.woff2) format('woff2');
+    font-family: 'NunitoSans-Regular';
+}
+
+@font-face{
+    src: url(./fonts/YesevaOne-Regular.woff2) format('woff2');
+    font-family: 'YesevaOne-Regular';
+}
+body{
+    display: flex;
+    justify-content: space-around
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #131313;
+    color: #FFFFFF;
+    font-family: "NunitoSans-Regular";
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: 0;
+}
+
+h1, h2 {
+    color: #E3B873;
+    text-transform: uppercase;
+    font-family: "YesevaOne-Regular";
+}
+
+h1 {
+    font-size: 27px;
+    line-height: 37px;
+    letter-spacing: -0.07em;
+    width: 160px;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0;
+}
+
+.main_slider {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 134.5px;
+    width: 1171px;
+    height: 552px;
+
+}
+
+.box_text {
+    margin-top: 176px;
+    width: 442px;
+    height: 482px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box_img {
+    margin-left: 50px;
+    margin-top: 107px;
+    width: 679px;
+}
+
+.article {
+    margin: 34px 0 42px;
+}
+
+.heading {
+    display: flex;
+}
+
+.linie {
+    width: 92px;
+    border-top: 1px solid #E3B873;
+    margin-top: 52px;
+}
+
+.box_content {
+    display: grid;
+    grid-template-columns: 161px 172px;
+    gap: 34px;
+}
+
+.img_btn {
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    width: 623px;
+}
+
+.btn-img-item {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    background: none;
+    font-family: "YesevaOne-Regular";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0;
+}
+
+.img {
+    margin-top: 45px;
+    width: 679px;
+}
+
+.slider_control {
+    width: 203px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pfeil {
+    background: none;
+}
+
+.pfeil img {
+    display: block;
+}
+
+.right-pfeil {
+    transform: rotate(180deg);
+}
+
+.btn-control {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-control_active {
+    background: white;
+}
+
+.btn-img_active {
+    color: #E3B873;
+    border-bottom: 1px solid #E3B873;
+}

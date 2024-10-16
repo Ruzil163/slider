@@ -34,7 +34,7 @@ mass = [
     },
 ]
 
-let bildAendert = (arg)=>{
+bildAendert = (arg)=>{
     bild.src = mass[arg].Img
     city.innerHTML = mass[arg].Location
     meter.innerHTML = mass[arg].apartmeentAra
@@ -44,7 +44,7 @@ let bildAendert = (arg)=>{
     staedteFarbe()
 }
 
-let kreisFarbe = ()=>{
+kreisFarbe = ()=>{
     for(let i = 0; i < kollektionKreise.length; i++){
         if(scrollbar === i){
             kollektionKreise[i].classList.add('btn-control_active')
@@ -55,7 +55,7 @@ let kreisFarbe = ()=>{
     }
 }
 
-let staedteFarbe = ()=>{
+staedteFarbe = ()=>{
     for(let i = 0; i < kollektionStaedte.length; i++){
         if(scrollbar === i){
             kollektionStaedte[i].classList.add('btn-img_active')
@@ -66,7 +66,7 @@ let staedteFarbe = ()=>{
     }
 }
 
-let staedteName = ()=>{
+staedteName = ()=>{
     for(let i = 0; i < mass.length; i++){
         kollektionStaedte[i].innerHTML = mass[i].button
     }

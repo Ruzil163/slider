@@ -15,7 +15,7 @@ mass = [
         Img: './img/img1.png',
         button: 'ROSTOV-ON-DON, ADMIRAL',
         Location: 'Rostov-on-Don <br> LCD admiral',
-        apartmentArea: '81 m2',
+        apartmeentAra: '81 m2',
         RepairTime: '3.5 months',
     },
     {

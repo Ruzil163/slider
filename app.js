@@ -1,107 +1,107 @@
-let bild = document.querySelector('.img')
-let city = document.querySelector('#city')
-let meter = document.querySelector('#meter')
-let monate = document.querySelector('#monate')
-let pfeil_l = document.querySelector('.left-pfeil')
-let pfeil_r = document.querySelector('.right-pfeil')
+bild = document.querySelector('.img')
+city = document.querySelector('#city')
+meter = document.querySelector('#meter')
+monate = document.querySelector('#monate')
+pfeilLeft = document.querySelector('.left-pfeil')
+pfeilRight = document.querySelector('.right-pfeil')
 
-let kollektion_kreise = document.querySelectorAll('.btn-control')
-let kollektion_staedte = document.querySelectorAll('.btn-img-item')
+kollektionKreise = document.querySelectorAll('.btn-control')
+kollektionStaedte = document.querySelectorAll('.btn-img-item')
 
-let jetzige = 0
+scrollbar = 0
 
-let mass = [
+mass = [
     {
-        schluessel_1: './img/img1.png',
-        schluessel_2: 'ROSTOV-ON-DON, ADMIRAL',
-        schluessel_3: 'Rostov-on-Don <br> LCD admiral',
-        schluessel_4: '81 m2',
-        schluessel_5: '3.5 months',
+        Img: './img/img1.png',
+        button: 'ROSTOV-ON-DON, ADMIRAL',
+        Location: 'Rostov-on-Don <br> LCD admiral',
+        apartmentArea: '81 m2',
+        RepairTime: '3.5 months',
     },
     {
-        schluessel_1: './img/img2.png',
-        schluessel_2: 'SOCHI THIEVES',
-        schluessel_3: 'Sochi <br> Thieves',
-        schluessel_4: '105 m2',
-        schluessel_5: '4 months',
+        Img: './img/img2.png',
+        button: 'SOCHI THIEVES',
+        Location: 'Sochi <br> Thieves',
+        apartmeentAra: '105 m2',
+        RepairTime: '4 months',
     },
     {
-        schluessel_1: './img/img3.png',
-        schluessel_2: 'ROSTOV-ON-DON PATRIOTIC',
-        schluessel_3: 'Rostov-on-Don <br> Patriotic',
-        schluessel_4: '93 m2',
-        schluessel_5: '3 months',
+        Img: './img/img3.png',
+        button: 'ROSTOV-ON-DON PATRIOTIC',
+        Location: 'Rostov-on-Don <br> Patriotic',
+        apartmeentAra: '93 m2',
+        RepairTime: '3 months',
     },
 ]
 
 let bildAendert = (arg)=>{
-    bild.src = mass[arg].schluessel_1
-    city.innerHTML = mass[arg].schluessel_3
-    meter.innerHTML = mass[arg].schluessel_4
-    monate.innerHTML = mass[arg].schluessel_5
-    jetzige = arg
+    bild.src = mass[arg].Img
+    city.innerHTML = mass[arg].Location
+    meter.innerHTML = mass[arg].apartmeentAra
+    monate.innerHTML = mass[arg].RepairTime
+    scrollbar = arg
     kreisFarbe()
     staedteFarbe()
 }
 
 let kreisFarbe = ()=>{
-    for(let i = 0; i < kollektion_kreise.length; i++){
-        if(jetzige === i){
-            kollektion_kreise[i].classList.add('btn-control_active')
+    for(let i = 0; i < kollektionKreise.length; i++){
+        if(scrollbar === i){
+            kollektionKreise[i].classList.add('btn-control_active')
         }
         else{
-            kollektion_kreise[i].classList.remove('btn-control_active')
+            kollektionKreise[i].classList.remove('btn-control_active')
         }
     }
 }
 
 let staedteFarbe = ()=>{
-    for(let i = 0; i < kollektion_staedte.length; i++){
-        if(jetzige === i){
-            kollektion_staedte[i].classList.add('btn-img_active')
+    for(let i = 0; i < kollektionStaedte.length; i++){
+        if(scrollbar === i){
+            kollektionStaedte[i].classList.add('btn-img_active')
         }
         else{
-            kollektion_staedte[i].classList.remove('btn-img_active')
+            kollektionStaedte[i].classList.remove('btn-img_active')
         }
     }
 }
 
 let staedteName = ()=>{
     for(let i = 0; i < mass.length; i++){
-        kollektion_staedte[i].innerHTML = mass[i].schluessel_2
+        kollektionStaedte[i].innerHTML = mass[i].button
     }
 }
 
-pfeil_r.addEventListener(
+pfeilRight.addEventListener(
     'click',
     ()=>{
         let a;
-        if(jetzige === mass.length - 1){
+        if(scrollbar === mass.length - 1){
             a = 0
         }
         else{
-            a = jetzige + 1
+            a = scrollbar + 1
         }
         bildAendert(a)
     }
 )
 
-pfeil_l.addEventListener(
+pfeilLeft.addEventListener(
     'click',
     ()=>{
         let a;
-        if(jetzige === 0){
+        if(scrollbar === 0){
             a = mass.length - 1
         }
         else{
-            a = jetzige - 1
+            a = scrollbar - 1
         }
         bildAendert(a)
     }
 )
 
-for(let i = 0; i < kollektion_kreise.length; i++){
-    kollektion_kreise[i].addEventListener(
+for(let i = 0; i < kollektionKreise.length; i++){
+    kollektionKreise[i].addEventListener(
         'click',
         ()=>{
             bildAendert(i)
@@ -109,8 +109,8 @@ for(let i = 0; i < kollektion_kreise.length; i++){
     )
 }
 
-for(let i = 0; i < kollektion_staedte.length; i++){
-    kollektion_staedte[i].addEventListener(
+for(let i = 0; i < kollektionStaedte.length; i++){
+    kollektionStaedte[i].addEventListener(
         'click',
         ()=>{
             bildAendert(i)
@@ -119,4 +119,4 @@ for(let i = 0; i < kollektion_staedte.length; i++){
 }
 
 staedteName()
-bildAendert(jetzige)
+bildAendert(scrollbar)
